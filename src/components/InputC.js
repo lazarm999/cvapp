@@ -3,6 +3,19 @@ import './InputC.css'
 import { Input, Label } from 'reactstrap';
 
 class InputC extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = (e) => {
+    this.setState({value: e.target.value})
+    this.props.onSubmit(e.target.value)
+  }
+
   render(){
     let labelClassName = "label " + this.props.labelClassName;
     let inputClassName = "input " + this.props.inputClassName;
@@ -10,6 +23,8 @@ class InputC extends React.Component {
         <div className = { this.props.className }>
             <Label className = {labelClassName}>{this.props.label}</Label>
             <Input
+                  onChange={this.handleChange}
+                  value={this.state.value}
                   type={this.props.type}
                   className = {inputClassName}
               />
