@@ -21,9 +21,6 @@ class LoginComponent extends React.Component{
 
     onLoginBtnClick(){
         this.props.submit({username: this.state.username , password: this.state.password});
-        // console.log(`${this.state.username}  ${this.state.password}`);
-        // this.props.submit({username: 'test', password:'test'})
-        //window.location.replace("/cvForma");
     }
 
     onUserNameChange = username => {
@@ -41,10 +38,10 @@ class LoginComponent extends React.Component{
                     <img src = "photos/job_fair_login.png" alt = "job fair" className = "jobFairLogo"></img>
                 </div>
                 <div className="col s12 inputContainer" >
-                    <InputC type="email" label = "Email" labelClassName = "loginLabel" onSubmit={this.onUserNameChange}/>
+                    <InputC type="email" label = "Email" labelClassName = "loginLabel" onSubmit={this.onUserNameChange} index={null} value={''}/>
                 </div>
                 <div className="col s12 inputContainer">
-                    <InputC type="password" label = "Lozinka" labelClassName = "loginLabel" onSubmit={this.onChangePassword}/>
+                    <InputC type="password" label = "Lozinka" labelClassName = "loginLabel" onSubmit={this.onChangePassword} index={null} value={''}/>
                 </div>
                 <div className="col s12 loginAndForgotPassContainer">
                     <div className = "col s12 m12 l6 xl6 loginBtnContainer">

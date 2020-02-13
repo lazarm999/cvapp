@@ -6,14 +6,14 @@ class InputC extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {value: ''};
+    this.state = {value: this.props.value};
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({value: e.target.value})
-    this.props.onSubmit(e.target.value)
+    this.props.onSubmit(e.target.value, this.props.index)
   }
 
   render(){

@@ -1,16 +1,21 @@
 
-import * as userActions from '../constants/userActionsTypes';
+import * as userActionTypes from '../constants/userActionsTypes';
 
 export const loginRequest = credentials => ({
-    type: userActions.FETCH_USER,
+    type: userActionTypes.FETCH_USER,
     credentials
 })
 
 export const loginApproved = user => ({
-    type: userActions.LOGIN_SUCCESSFUL,
+    type: userActionTypes.LOGIN_SUCCESSFUL,
     user
 })
 
 export const loginFailed = () => ({
-    type: userActions.LOGIN_FAIL
+    type: userActionTypes.LOGIN_FAIL
+})
+
+export const registerUser = data => ({
+    type: userActionTypes.REGISTER_USER,
+    data
 })

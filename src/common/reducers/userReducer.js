@@ -24,6 +24,7 @@ const userReducer = ( state = initialState, action) => {
 
         case userActionsTypes.LOGIN_SUCCESSFUL: {
             const {user} = action;
+
             return {
                 ...state,
                 proccessing: false,
